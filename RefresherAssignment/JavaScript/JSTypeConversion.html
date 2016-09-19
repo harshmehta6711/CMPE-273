@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript TypeConversion</title>
+</head>
+<script type="text/javascript">
+function checkPythagoras()
+{
+	var num1=document.getElementById('dd1').value;
+	var num2=document.getElementById('dd2').value;
+	
+	if(num1==="Number" & num2==="Number")
+		{
+		document.getElementById('number3').value="Number";
+		}
+	else if(num1==="Boolean" & num2==="Boolean")
+		{
+		document.getElementById('number3').value="Number";
+		}
+	else if(num1==="Boolean" & num2==="Number" |
+			num2==="Boolean" & num1==="Number")
+	{
+	document.getElementById('number3').value="Number";
+	}
+	else if(num1==="String" | num2==="String")
+	{
+	document.getElementById('number3').value="String";
+	}
+	
+	
+	
+	//var str=num1 + "String"; //Type Conversion from Number to String
+	//document.getElementById('check').innerHTML = typeof str;
+	
+	//var bool= true+5;
+	//document.getElementById('check').innerHTML = typeof bool;
+	
+	//var bool=true;
+	
+	}
+</script>
+<body>
+<h1>Type Conversion Table in JavaScript</h1>
+<select name="Datatypes" style="width:100px;" id="dd1">
+ <option value="Number1">Select Type</option>
+  <option value="Number">Number</option>
+  <option value="String">String</option>
+  <option value="bool">Boolean</option>
+  
+</select>
++
+<select name="Datatypes" style="width:100px;" id="dd2">
+	 <option value="Number1">Select Type</option>
+  <option value="Number">Number</option>
+  <option value="String">String</option>
+  <option value="bool">Boolean</option>
+  
+</select>
+<!-- <input type="number" id="number1"  min=0 required>
++
+
+<input type="number" id="number2"  min = 0 required> -->
+=
+<input type="text" id="number3" min=0 required>  
+<br/><br />
+ <input type="submit" onclick="checkPythagoras()" id="Submit" value="Submit" name="Submit">
+<p id="check"></p>
+</body>
+</html>

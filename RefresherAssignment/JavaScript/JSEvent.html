@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Event</title>
+<script type="text/javascript">
+function eventListener(myOption)
+{
+	if(myOption.value === 'Yes')
+		{
+		
+		document.getElementById('selectCourse').disabled=false;
+		}
+	else{
+		document.getElementById('selectCourse').disabled=true;
+	}
+	
+	}
+
+</script>
+</head>
+<body>
+<form>
+<h3>San Jose State University</h3>
+<label>Are you a student of San Jose State University? </label>
+<!-- Demo of onclick event -->
+<input type="radio" name="YESNO" value="Yes" id="askRadioYes" onclick="eventListener(this)" /><label for="askRadioYes">Yes</label>
+<input type="radio" name="YESNO" value="No" id="askRadioNo" onclick="eventListener(this)" /><label for="askRadioNo">No</label>
+<br />
+<label for="askCourse">Select the appropriate Course <br /></label>
+<select id="selectCourse" disabled="disabled">
+<option>Undergraduate</option>
+<option>Graduate</option>
+</select>
+</form>
+</body>
+</html>

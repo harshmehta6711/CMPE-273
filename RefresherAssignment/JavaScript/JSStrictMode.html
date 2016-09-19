@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+'use strict';
+
+function storeDetails()
+{
+	var bname="In storeDetails Function";
+	//document.write(bname);
+	var doc=document.getElementById('para');
+	doc.innerHTML=bname;
+}
+bname="Ouside storeDetails Function";
+var doc=document.getElementById('para');
+doc.innerHTML=bname;
+
+</script>
+<meta charset="ISO-8859-1">
+<title>Strict Mode</title>
+</head>
+<body onload="storeDetails()">
+<p id="para"></p>
+</body>
+</html>

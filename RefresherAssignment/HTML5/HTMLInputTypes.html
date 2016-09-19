@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HTML Input Type</title>
+</head>
+<body bgcolor="skyblue">
+<h3> Fill the below details to book the table online</h3>
+<div id="formbody">
+<form>
+<fieldset>
+<legend>Booking Details</legend>
+	
+	<table>
+	<tr>
+	<td><label for="fullname">Full Name (required) </label></td>
+	<td><input type="text" id="fullname" size=40 required aria-describedby="formatname" autofocus="autofocus" ></td>
+	<td><span id="formatname">format: FirstName LastName</span></td>
+</tr>
+	
+	<tr>
+	<td><label for="date">Date (required) </label></td>
+	<td><input type="date" id="date"  required></td></tr>
+	
+	<tr>
+	<td><label for="time">Time (required) </label></td>
+	<td><input type="time" id="time" required ></td>
+	
+</tr>
+
+<tr>
+	<td><label for="tablefor">Book table for  </label></td>
+	<td><input type="range" min=1 max=8 value=4 id="tablefor" oninput="outval.value=tablefor.value" ></td>
+	<td><output id="outval">4 </output></td>
+	
+</tr>
+
+<tr>
+	<td><label for="email">Email (required) </label></td>
+	<td><input type="email" id="email" size=40 required aria-describedby="formatemail"></td>
+	<td><span id="formatname">james@somename.com</span></td>
+</tr>
+
+<tr>
+	<td><label for="mob">Mobile (required) </label></td>
+	<td><input type="tel" id="mob" size=10 required pattern="\d{3}[\-]\d{3}[\-]\d{4}"></td>
+	
+</tr>
+	</table>
+	<br />
+	<input type="submit" value="Submit">
+	</fieldset>
+
+	</form>
+
+
+</div>
+</body>
+</html>

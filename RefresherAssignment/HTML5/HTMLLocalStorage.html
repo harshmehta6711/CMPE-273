@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+function storeDetails()
+{
+	localStorage.clear();
+	var bname=document.getElementById('bookName').value;
+	var quant=document.getElementById('addQuantity').value;
+	localStorage.setItem(""+bname,""+quant)
+	for(var i=0;i<localStorage.length;i++)
+		{
+		
+		var a = document.createElement("P");                      
+		var t = document.createTextNode(localStorage.key(i)+" "+localStorage.getItem(localStorage.key(i)));      
+		a.appendChild(t);                                         
+		document.body.appendChild(a); 
+		
+		}
+	alert('The item added successfully');
+
+}
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>
+<label for="addKey">Book's name</label>
+</td>
+<td>
+<input type="text" id="bookName"></input>
+</td>
+<td>
+<label for="addQuantity">Quantity</label>
+</td>
+<td>
+<input type="number" id="addQuantity"></input>
+ </td>
+ </tr>
+ </table>
+ <br/>
+ <input type="submit" id="add" value="Add Book" onclick="storeDetails()">
+<!--  
+<div id="SearchBar">
+<label for="Searcher">Search Book</label>
+<input type="text" id="Searcher" placeholder="Enter the items to be searched">
+</div> -->
+<p id="yourCart"></p>
+
+ </body>
+</html>

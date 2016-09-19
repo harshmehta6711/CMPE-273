@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function replaceWord()
+{
+	var from=document.getElementById('from').value;
+	var rep=document.getElementById('to').value;
+	var withword=document.getElementById('with').value;
+	var pp=new RegExp(""+rep+"","gi");
+	
+	var str=from.replace(pp, withword);
+	
+	document.getElementById('newstring').value=str;
+		
+	}
+
+</script>
+
+</head>
+<body>
+<table>
+<tr>
+<td><label for="from">Enter the string</label></td>
+<td><input type="text" id="from" /></td>
+</tr>
+
+<tr>
+<td><label for="to">Word to replace</label></td>
+<td><input type="text" id="to"></td></tr>
+
+<tr>
+<td><label for="with">New Word</label></td>
+<td><input type="text" id="with"></td></tr>
+
+
+<tr>
+<td>
+<input type="button" value="Replace" onclick="replaceWord()"></td><tr>
+
+<tr>
+<td><label for="newstring"></label></td>
+<td><input type="text" id="newstring" /></td>
+</tr>
+</table>
+</body>
+</html>

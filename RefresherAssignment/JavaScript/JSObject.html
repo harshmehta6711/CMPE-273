@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Object</title>
+<script type="text/javascript">
+//Javascript Object implementation
+var book = {
+		
+		name : "The C programming",
+		author : "V Balaguruswami",
+		dept : "Computer Science and Engineering",
+		ISBN: "978-0-8401-6830-5",
+		library : "Martin Luther King Public Library",
+		floor : "8",
+		location : "AA251",
+		copies : 10,
+		
+		showDetails : function()
+		{
+			var bookName = document.getElementById('bookDDbox').value;
+			if(book.name == bookName)
+				{
+			var n="Title: "+this.name+"<br\>"+"Author: "+this.author+"<br\>"+"Department: "+this.dept+
+					"<br\>"+"ISBN: "+this.ISBN+"<br\>"+"Library: "+this.library+"<br\>"+"Floor: "+this.floor+
+					"<br\>"+"Location: "+this.location+"<br\>";
+			document.getElementById('details').innerHTML=n;
+				}
+			else
+				{
+				alert("Please make the appropriate book selection!");
+				}
+			//document.getElementById('showDetails').style.visibility='hidden';
+		},
+		
+		checkAvailability: function()
+		{
+			var bookName = document.getElementById('bookDDbox').value;
+			if(book.name == bookName){
+			var n="Number of remaining copies: "+ this.copies;
+			document.getElementById('details').innerHTML=n;}
+			else
+			{
+			alert("No book selected!");
+			}
+		},		
+		issueBook: function()
+		{
+			this.copies--;
+			var bookName = document.getElementById('bookDDbox').value;
+			if(book.name == bookName && book.copies > 1){
+			alert("The book you requested is successfully issued!\nNumber of copies left : "+book.copies);
+			}
+			else
+				{
+				alert("The requested book is not available in MLK");
+				}
+		}	
+		
+}
+</script>
+</head>
+<body>
+<h3>Welcome to the Martin Luther King Public Library</h3>
+<input type="text" list="bookList" id="bookDDbox" required >
+<datalist id="bookList">
+<option>The C programming</option>
+</datalist>
+
+<p id="details"></p>
+<input type="button" id="showDetails" value="Get Details" onclick="book.showDetails()">
+<input type="button" id="checkAvailability" value="Check Availability" onclick="book.checkAvailability()">
+<input type="button" id="issueBook" value="Issue" onclick="book.issueBook()">
+
+</body>
+</html>

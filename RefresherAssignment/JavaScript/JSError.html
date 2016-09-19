@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+var i = 0 ;
+function toArray()
+
+{
+	var num=document.getElementById('ipnumber').value;	
+	var narr=new Array(5);	
+		try{
+			if(num < 0)	
+				throw new RangeError('positive number only!');
+			if(isNaN(num))
+				throw new TypeError('Number only!');
+			else
+				alert("Number Successfully Added");
+	
+		narr[i]=num;
+		i++;
+	}
+	catch(e)
+	{
+		if(e instanceof RangeError)
+			{
+			alert('Only positive Integers! ');
+			}
+		if(e instanceof TypeError)
+		{
+		alert('Invalid Number! Try Again'); 
+		}
+	}	
+	document.getElementById('ipnumber').value="";
+		
+}
+</script>
+
+</head>
+<body>
+<label for="ipnumber">Enter the number to Add</label>
+<input type="number" required id="ipnumber" size=2  placeholder="Enter the positive numbers" autofocus="autofocus"/>
+<input type="button" onclick="toArray()" value="Add"/> 
+</body>
+</html>

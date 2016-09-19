@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Function Demo</title>
+<script type="text/javascript">
+//Function Defination
+function toMphfn() 				
+{
+	//Declaring and Initializing a variable
+	var inKmph = document.getElementById('Speedkmph').value;
+	if(inKmph.length == 0)
+		{
+		alert('Please Enter the valid Input');
+		}
+	var conversionConst = 0.6213;
+	var inMph = inKmph * conversionConst;
+	document.getElementById('Speedmph').value = inMph ;	 
+	}
+</script>
+</head>
+<body>
+<h2> JavaScript Function</h2>
+<h3>Enter the speed in kmph</h3>
+<input type="number" id="Speedkmph" pattern="\d+" />
+<input type="submit" id="toMph" value="Convert" onclick="toMphfn()" /> <!--HTML 5 attribute to restrict user from entering input other than numbers-->
+<h3>Speed in mph</h3>
+<input type="text" id="Speedmph" />
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Condition</title>
+<script type="text/javascript">
+	
+		function tckt()
+		{
+			
+			var age=document.getElementById('Age').value;
+			var msg=document.getElementById('type');
+			
+			if(age>0 && age <=4)
+				{
+				
+				document.getElementById('type').value="Infant $0";
+				}
+			else if(age>4 && age <=12)
+				{
+				
+				document.getElementById('type').value="Half Ticket $2";
+				}
+			else if(age>12 && age <=58)
+				{
+					
+				document.getElementById('type').value="Full Adult $4";
+				}
+			else
+				{
+				document.getElementById('type').value="Senior Citizen $2";
+				}
+		}
+</script>
+</head>
+<body>
+	<label for="Age">Age (years):</label>
+	<input type="number" id="Age" required autofocus="autofocus" min=0 max=100 onchange="tckt()" />
+	<br/><br/>
+	<label for="type">Type of Tickets:</label>
+	<input type="text" id="type"/ readonly>
+	
+</body>
+</html>

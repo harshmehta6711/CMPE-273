@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Array</title>
+<script type="text/javascript">
+
+function addWord()
+{
+	var wrd=document.getElementById('word').value;
+	var wrdarr=[];			//JavaScript arrays
+	var size=wrdarr.push(wrd);
+	for(t=0;t<wrdarr.length;t++)
+		{
+		document.getElementById('enterList').innerHTML="\n"+wrdarr[t];
+		}
+	//document.writeln(size);
+	}
+
+
+</script>
+</head>
+<body>
+JavaScript Array Demo. 
+<br />
+<label for="word">Enter the word</label>
+<input type="text" id="word" size="20" required autofocus="autofocus">
+
+<input type="button" id="addword" value="Add" onclick="addWord()">
+<p id="enterList"></p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JSON</title>
+<script type="text/javascript">
+function getDetails()
+{
+var n11=document.getElementById('n11').value;
+var n12=document.getElementById('n12').value;
+var n13=document.getElementById('n13').value;
+var n21=document.getElementById('n21').value;
+var n22=document.getElementById('n22').value;
+var n23=document.getElementById('n23').value; 
+                  var text = '{"numbers":[' +
+                  '{"n1":'+n11+',"n2":'+n12+',"n3":'+n13+' },' +
+                  '{"n1":'+n21+',"n2":'+n22+',"n3":'+n23+' }]}';                   
+obj1=JSON.parse(text);
+document.getElementById('tot1').innerHTML=obj1.numbers[0].n1*obj1.numbers[0].n2*obj1.numbers[0].n3;
+document.getElementById('tot2').innerHTML=obj1.numbers[1].n1*obj1.numbers[1].n2*obj1.numbers[1].n3;
+}
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td><label>Numbers to be multiplied:</label></td>
+<td></td>
+<td><label>Numbers to be multiplied:</label></td>
+<td></td>
+</tr>
+<tr>
+<td><label>N1 :</label></td>
+<td><input id="n11"></td>
+<td><label>N1 :</label></td>
+<td><input id="n21"></td>
+</tr>
+<tr>
+<td><label>N2 :</label></td>
+<td><input id="n12"></td>
+<td><label>N2 :</label></td>
+<td><input id="n22"></td>
+</tr>
+<tr>
+<td><label>N3 :</label></td>
+<td><input id="n13"></td>
+<td><label>N3 :</label></td>
+<td><input id="n23"></td>
+</tr>
+<tr>
+<td><label>Total :</label></td>
+<td><label id="tot1"></label></td>
+<td><label>Total :</label></td>
+<td><label id="tot2"></label></td>
+</tr>
+<tr><td><input type="submit" id="getd" value="Get Details" onclick="getDetails()"></td></tr>
+</table>
+</body>
+</html>

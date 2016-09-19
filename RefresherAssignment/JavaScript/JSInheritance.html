@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var class1={
+	
+	total :function(m1,m2,m3)
+	{
+		return m1+m2+m3;
+	},
+	 avg:function(tot)
+	{
+		return tot/3;
+	}
+	
+};
+
+var student1=Object.create(class1);
+student1.id="1234";
+student1.name="Rahul";
+student1.maths=95;
+student1.science=90;
+student1.Social=85;
+if(class1.isPrototypeOf(student1))	
+	{
+	document.writeln("Student Id: "+student1.id);
+	document.writeln(" <br />Student name: "+student1.name);
+	var tot=student1.total(student1.maths,student1.science,student1.Social);
+	var avg=student1.avg(tot);
+	document.writeln("\n<br/>Total: "+avg);
+	document.writeln("\n<br/>Average: "+avg);
+	
+	}
+
+var student2=Object.create(class1);
+student2.id="234";
+student2.name="James";
+student2.maths=91;
+student2.science=90;
+student2.Social=83;
+if(class1.isPrototypeOf(student2))	
+	{
+	document.writeln("\n <br /> <br />Student Id :"+student2.id);
+	document.writeln("\n <br />Student name :"+student2.name);
+	var tot=student1.total(student2.maths,student2.science,student2.Social);
+	var avg=student1.avg(tot);
+	document.writeln("\n<br/>Total: "+avg);
+	document.writeln("\n<br/>Average: "+avg);
+	}
+
+
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
